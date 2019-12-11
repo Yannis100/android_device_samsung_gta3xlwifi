@@ -1,7 +1,7 @@
-LOCAL_PATH := device/samsung/gt58wifi
+LOCAL_PATH := device/samsung/gta3xlwifi
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_gta3xlwifi.mk
+    $(LOCAL_PATH)/havoc_gta3xlwifi.mk
     
-    COMMON_LUNCH_CHOICES := \
+COMMON_LUNCH_CHOICES := \
 	havoc_gta3xlwifi-userdebug \

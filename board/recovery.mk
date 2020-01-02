@@ -1,0 +1,54 @@
+####################
+# Recovery		   #
+####################
+
+TARGET_OTA_ASSERT_DEVICE := gta3xlwifi
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_HAS_DOWNLOAD_MODE := true
+
+# Android Verified Boot
+BOARD_AVB_ENABLE := false
+BOARD_BUILD_DISABLED_VBMETAIMAGE := true
+
+
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+TARGET_RECOVERY_DENSITY := hdpi
+
+ifeq ($(RECOVERY_VARIANT),twrp)
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/twrp.fstab
+else
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
+endif
+
+ifeq ($(RECOVERY_VARIANT),twrp)
+# Crypto
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FBE := true
+
+# Debug
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+TWRP_EVENT_LOGGING := false
+
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 162
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_INCLUDE_NTFS_3G := true
+TW_EXCLUDE_SUPERSU := true
+TW_EXTRA_LANGUAGES := true
+TW_USE_NEW_MINADBD := true
+TW_NO_USB_STORAGE := true
+TW_USE_TOOLBOX := true
+TW_NO_LEGACY_PROPS := true
+TW_DEVICE_VERSION := 5
+TW_THEME := portrait_hdpi
+
+endif

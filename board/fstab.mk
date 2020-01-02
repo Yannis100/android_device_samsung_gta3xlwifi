@@ -1,2 +1,2 @@
 # Recovery
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/ramdisk/recovery.fstab

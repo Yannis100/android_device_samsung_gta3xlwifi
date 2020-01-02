@@ -1,0 +1,2 @@
+# ADB Legacy Interface
+TARGET_USES_LEGACY_ADB_INTERFACE := true 

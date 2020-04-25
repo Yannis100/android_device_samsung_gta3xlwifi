@@ -1,0 +1,6 @@
+on init
+    symlink /dev/block/platform/13500000.dwmmc0/by-name/radio /dev/mbin0
+    restorecon /dev/mbin0
+
+    write /proc/sys/net/core/netdev_max_backlog 5000
+

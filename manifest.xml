@@ -1,8 +1,8 @@
 <manifest version="1.0" type="device">
     <hal format="hidl">
         <name>android.hardware.audio</name>
-        <transport>hwbinder</transport>
-        <version>5.0</version>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.0</version>
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
@@ -10,8 +10,8 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
-        <transport>hwbinder</transport>
-        <version>5.0</version>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.0</version>
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
@@ -28,22 +28,22 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
-        <transport arch="32">passthrough</transport>
+        <transport arch="32+64">passthrough</transport>
         <version>2.4</version>
         <interface>
             <name>ICameraProvider</name>
             <instance>legacy/0</instance>
         </interface>
     </hal>
-<!--    <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.cas</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.0</version>
         <interface>
             <name>IMediaCasService</name>
             <instance>default</instance>
         </interface>
-    </hal> -->
+    </hal>
     <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
@@ -55,34 +55,28 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.drm</name>
-        <transport arch="32">passthrough</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICryptoFactory</name>
-            <instance>widevine</instance>
-            <instance>default</instance>
-        </interface>
-        <interface>
-             <name>IDrmFactory</name>
-             <instance>widevine</instance>
-             <instance>default</instance>
-         </interface>
-    </hal>
-<!--    <hal format="hidl">
-        <name>vendor.samsung.hardware.gnss</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
         <interface>
-            <name>ISecGnss</name>
+            <name>ICryptoFactory</name>
+            <instance>clearkey</instance>
             <instance>default</instance>
+            <instance>widevine</instance>
         </interface>
-   </hal> -->
-    <hal format="hidl">
-        <name>vendor.lineage.power</name>
-        <transport arch="32+64">passthrough</transport>
+        <interface>
+            <name>IDrmFactory</name>
+            <instance>clearkey</instance>
+            <instance>default</instance>
+            <instance>widevine</instance>
+        </interface>
+    </hal>
+        <hal format="hidl">
+        <name>android.hardware.gatekeeper</name>
+        <transport>hwbinder</transport>
+        <impl level="generic"></impl>
         <version>1.0</version>
         <interface>
-            <name>ILineagePower</name>
+            <name>IGatekeeper</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -97,68 +91,52 @@
     </hal>
     <hal format="hidl">
         <name>vendor.lineage.touch</name>
-        <transport>hwbinder</transport>
+        <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
         <interface>
             <name>IKeyDisabler</name>
             <instance>default</instance>
         </interface>
+        <interface>
+            <name>ITouchscreenGesture</name>
+            <instance>default</instance>
+        </interface>
     </hal>
-    <!-- <hal format="hidl">
-        <name>vendor.lineage.livedisplay</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
+    <hal format="hidl">
+        <name>android.hardware.gnss</name>
+        <transport arch="32">passthrough</transport>
+        <version>1.2</version>
         <interface>
-            <name>IAdaptiveBacklight</name>
+            <name>IGnss</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.sensors</name>
+         <transport>hwbinder</transport>>
+        <version>1.0</version>
         <interface>
-            <name>IDisplayColorCalibration</name>
+            <name>ISensors</name>
             <instance>default</instance>
         </interface>
-        <interface>
-            <name>IDisplayModes</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IReadingEnhancement</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>ISunlightEnhancement</name>
-            <instance>default</instance>
-        </interface>
-    </hal> -->
+    </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
-        <transport arch="32+64">passthrough</transport>
-        <version>3.0</version>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
         <interface>
             <name>IAllocator</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.0::IAllocator/default</fqname>
-        <fqname>@3.0::IAllocator/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.1</version>
         <interface>
             <name>IComposer</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.graphics.mapper</name>
-        <transport arch="32+64">passthrough</transport>
-        <version>3.0</version>
-        <interface>
-            <name>IMapper</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::IMapper/default</fqname>
-        <fqname>@3.0::IMapper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
@@ -202,10 +180,19 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.memtrack</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.power</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILineagePower</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -222,24 +209,7 @@
         <name>android.hardware.renderscript</name>
         <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
-        <interface>
-            <name>IContext</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IDevice</name>
-            <instance>default</instance>
-        </interface>
     </hal>
-<!--    <hal format="hidl">
-        <name>android.hardware.sensors</name>
-        <transport arch="32">passthrough</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISensors</name>
-            <instance>default</instance>
-        </interface>
-    </hal> -->
     <hal format="hidl">
         <name>android.hardware.usb</name>
         <transport>hwbinder</transport>
@@ -249,19 +219,10 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--    <hal format="hidl">
-        <name>android.hardware.vibrator</name>
-        <transport arch="32+64">passthrough</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IVibrator</name>
-            <instance>default</instance>
-        </interface>
-    </hal> -->
     <hal format="hidl">
         <name>android.hardware.wifi</name>
         <transport>hwbinder</transport>
-        <version>1.3</version>
+        <version>1.1</version>
         <interface>
             <name>IWifi</name>
             <instance>default</instance>
@@ -270,9 +231,18 @@
     <hal format="hidl">
         <name>android.hardware.wifi.supplicant</name>
         <transport>hwbinder</transport>
-        <version>1.2</version>
+        <version>1.0</version>
         <interface>
             <name>ISupplicant</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.thermal</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IThermal</name>
             <instance>default</instance>
         </interface>
     </hal>

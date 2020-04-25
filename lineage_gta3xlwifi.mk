@@ -18,8 +18,10 @@
 $(call inherit-product, device/samsung/gta3xlwifi/device.mk)
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+# Inherit from the 64 bit configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
@@ -33,12 +35,30 @@ PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
+# Device specific properties
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.qualcomm.cabl=0 \
+	ro.carrier=wifi-only \
+	ro.radio.noril=1 \
+	telephony.lteOnCdmaDevice=0
+
+	
+# ADB
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.logd.filter=disable\
+    ro.debuggable=1 \
+    persist.service.adb.enable=1
+
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="gta3xlwifi" \
     PRODUCT_NAME="gta3xlwifi" \
     PRIVATE_BUILD_DESC="gta3xlwifixx-user 9 PPR1.180610.011 T510XXU2ASJD release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Xiaomi/sagit/sagit:7.1.1/NMF26X/V8.2.17.0.NCACNEC:user/release-keys
+BUILD_FINGERPRINT := samsung/gta3xlwifixx/gta3xlwifi:9/PPR1.180610.011/T510XXU2ASJD:user/release-keys
 
 TARGET_VENDOR := Samsung

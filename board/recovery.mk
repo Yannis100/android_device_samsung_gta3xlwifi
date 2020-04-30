@@ -1,7 +1,7 @@
 # Recovery
 #RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7885
 TARGET_OTA_ASSERT_DEVICE := gta3xlwifi
 
 BOARD_HAS_NO_SELECT_BUTTON := true

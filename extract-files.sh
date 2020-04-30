@@ -1,39 +1,51 @@
 #!/bin/bash
 
+set -e
+
 VENDOR=samsung
-DEVICE=gtaxlwifi
+DEVICE=gta3xlwifi
 
-BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
-rm -rf $BASE/*
+# Load extract_utils and do some sanity checks
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
-    OLDIFS=$IFS IFS=":" PARSING_ARRAY=($FILE) IFS=$OLDIFS
-    FILE=${PARSING_ARRAY[0]}
-    DEST=${PARSING_ARRAY[1]}
-    if [ -z $DEST ]
-    then
-        DEST=$FILE
-    fi
-    DIR=`dirname $FILE`
-    if [ ! -d $BASE/$DIR ]; then
-        mkdir -p $BASE/$DIR
-    fi
+AOSP_ROOT="${MY_DIR}/../../.."
 
-    if [ -z "$STOCK_ROM_DIR" ]; then
-        adb pull /system/$FILE $BASE/$DEST
-    else
-        cp $STOCK_ROM_DIR/$FILE $BASE/$DEST
-    fi
+HELPER="${AOSP_ROOT}/vendor/aosp/build/tools/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
+    exit 1
+fi
+source "${HELPER}"
 
-    # if file does not exist try destination
-    if [ "$?" != "0" ]
-    then
-        if [ -z "$STOCK_ROM_DIR" ]; then
-            adb pull /system/$DEST $BASE/$DEST
-        else
-            cp $STOCK_ROM_DIR/$DEST $BASE/$DEST
-        fi
-    fi
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+SECTION=
+KANG=
+
+while [ "$1" != "" ]; do
+    case "$1" in
+        -n | --no-cleanup )     CLEAN_VENDOR=false
+                                ;;
+        -k | --kang)            KANG="--kang"
+                                ;;
+        -s | --section )        shift
+                                SECTION="$1"
+                                CLEAN_VENDOR=false
+                                ;;
+        * )                     SRC="$1"
+                                ;;
+    esac
+    shift
 done
 
-./setup-makefiles.sh
+if [ -z "${SRC}" ]; then
+    SRC=adb
+fi
+
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${AOSP_ROOT}" false "${CLEAN_VENDOR}"
+
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
+
+"${MY_DIR}/setup-makefiles.sh"

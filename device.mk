@@ -13,10 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#Inherit from vendor
+$(call inherit-product-if-exists, vendor/samsung/gta3xlwifi/gta3xlwifi-vendor.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 LOCAL_PATH := device/samsung/gta3xlwifi
+
+# Inherit board specific products
+-include $(LOCAL_PATH)/product/*.mk
+
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -32,17 +38,18 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/ramdisk/etc/fstab.exynos7885:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos7885 \
+#    $(LOCAL_PATH)/ramdisk/etc/fstab.exynos7885:$(TARGET_COPY_OUT_VENDOR)/fstab.exynos7885
+
+
+#PRODUCT_PACKAGES += \
+#	dtbhtoolExynos
+
+
+# cpboot-daemon
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/etc/fstab.exynos7885:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos7885 \
-    $(LOCAL_PATH)/ramdisk/etc/fstab.exynos7885:$(TARGET_COPY_OUT_VENDOR)/fstab.exynos7885
-
-
-PRODUCT_PACKAGES += \
-	dtbhtoolExynos
-
-# Inherit board specific products
--include $(LOCAL_PATH)/product/*.mk
-
+    $(LOCAL_PATH)/ramdisk/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd
 
 
 # System properties

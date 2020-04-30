@@ -1,10 +1,8 @@
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
-TARGET_SUPPORTS_64_BIT_APPS := false
-
-TARGET_KERNEL_SOURCE := kernel/samsung/ibanezbass
-TARGET_KERNEL_CONFIG := exynos7885-gta3xlwifi_gsi_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/ibanezbass
+#TARGET_KERNEL_CONFIG := exynos7885-gta3xlwifi_gsi_defconfig
 
 # Kernel
 #TARGET_KERNEL_ARCH := arm64

@@ -1,3 +1,7 @@
+
 # for H/W Codec
-uname: 1
 getdents64: 1
+
+
+# to use property in mediacodec
+recvfrom: 1

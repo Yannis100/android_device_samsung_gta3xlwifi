@@ -35,21 +35,18 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Boot animation
 TARGET_SCREEN_WIDTH := 1200
 TARGET_SCREEN_HEIGHT := 1920
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+#TARGET_BOOTANIMATION_PRELOAD := true
+#TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/ramdisk/etc/fstab.exynos7885:$(TARGET_COPY_OUT_RAMDISK)/fstab.exynos7885 \
-#    $(LOCAL_PATH)/ramdisk/etc/fstab.exynos7885:$(TARGET_COPY_OUT_VENDOR)/fstab.exynos7885
-
-
-#PRODUCT_PACKAGES += \
-#	dtbhtoolExynos
-
-
+    
 # cpboot-daemon
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd
+
+ifneq ($(INCLUDE_EXYNOS_BSP),)
+$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
+#$(call inherit-product, hardware/samsung_slsi/exynos7870/exynos7870.mk)
+endif
 
 
 # System properties

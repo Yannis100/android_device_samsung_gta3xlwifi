@@ -1,6 +1,5 @@
 # RAMDISK
 PRODUCT_PACKAGES += \
-    fstab.samsungexynos7885 \
     init.samsungexynos7885.rc \
     init.samsungexynos7885.usb.rc \
     init.gps.rc \
@@ -9,5 +8,4 @@ PRODUCT_PACKAGES += \
     init.power.rc \
     init.samsung.rc \
     init.wifi.rc \
-    ueventd.samsungexynos7885.rc 
-   
+    ueventd.samsungexynos7885.rc

@@ -16,11 +16,10 @@
 
 LOCAL_PATH := device/samsung/gta3xlwifi
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Include board config fragments
 include device/samsung/gta3xlwifi/board/*.mk
-
-BUILD_BROKEN_DUP_RULES := true
-#SELINUX_IGNORE_NEVERALLOWS := true
 
 
 # Include path
@@ -29,36 +28,17 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 # ADB Legacy Interface
 TARGET_USES_LEGACY_ADB_INTERFACE := true
 
-
-# Samsung HALs
-TARGET_AUDIOHAL_VARIANT := samsung
-TARGET_POWERHAL_VARIANT := samsung
-#TARGET_SEC_FP_HAL_VARIANT := bauth
-
-BOARD_USES_HWC_SERVICES := true
-
-# Firmware
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
-
-
 # Device Tree
 BOARD_USES_DT := true
 
-# Ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := vendor
 
-# Usb
-TARGET_USES_LEGACY_ADB_INTERFACE := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
-
-# SECComp filters
-BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
 
 
 # Inherit from the proprietary version

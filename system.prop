@@ -3,3 +3,49 @@ ro.chipname=exynos7885
 ro.arch=exynos7885
 ro.boot.bootdevice=13500000.dwmmc0
 ro.sf.lcd_density=240
+
+#
+ro.kernel.qemu=0
+ro.kernel.qemu.gles=1
+persist.demo.hdmirotationlock=false
+#Enable S.LSI USB settings
+dev.usbsetting.embedded=on
+
+#RILD debug level setting
+ro.debug_level=0x494d
+
+#Phone early start enable flag
+sys.config.phone_start_early=true
+
+# Set csc support in OMX
+# If not set or set to 0, OMX will only use BT.601 colorspace.
+# Set to 1 if and only if BOARD_USES_EXYNOS_DATASPACE_FEATURE := true in BoardConfig.mk
+ro.vendor.cscsupported=1
+
+# For QQ
+ro.qq.camera.sensor=3
+
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+ro.treble.enabled=true
+ro.build.version.sem=2801
+ro.build.version.sep=100100
+ro.build.selinux=1
+persist.sys.dalvik.vm.lib.2=libart.so
+dalvik.vm.isa.arm.variant=cortex-a53
+dalvik.vm.isa.arm.features=default
+ro.config.knox=v30
+ro.config.tima=1
+ro.config.timaversion=3.0
+ro.config.timaversion_info=Knox3.2_S.R.R
+ro.config.iccc_version=3.0
+ro.proca.version=2.0
+ro.config.dmverity=A
+ro.config.kap_default_on=true
+ro.config.kap=true
+iwc.arg1=0
+iwc.arg2=0
+iwc.arg3=0
+net.bt.name=Android
+dalvik.vm.stack-trace-dir=/data/anr

@@ -1,5 +1,5 @@
 //cc_library_shared {
-//    name: "android.hardware.camera.provider@2.4-impl.exynos7870",
+//    name: "android.hardware.camera.provider@2.4-impl.exynos7885",
 //    defaults: ["hidl_defaults"],
 //    proprietary: true,
 //    relative_install_path: "hw",

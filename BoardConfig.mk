@@ -34,8 +34,10 @@ BOARD_USES_DT := true
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
 # Vendor separation
-TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_VENDOR := system/vendor
 
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy

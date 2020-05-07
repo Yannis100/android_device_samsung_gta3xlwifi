@@ -36,6 +36,9 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
+# HWCServices
+BOARD_USES_HWC_SERVICES := false
+
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 

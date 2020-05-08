@@ -21,6 +21,11 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Include board config fragments
 include device/samsung/gta3xlwifi/board/*.mk
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2019-11-01
+
+
+TARGET_PREFER_32_BIT := true 
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -34,7 +39,7 @@ BOARD_USES_DT := true
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
 # Vendor separation
-TARGET_COPY_OUT_VENDOR := system/vendor
+TARGET_COPY_OUT_VENDOR := vendor
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := false

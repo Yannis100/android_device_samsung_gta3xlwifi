@@ -6,13 +6,12 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-#TARGET_LINUX_KERNEL_VERSION := 3.18
-TARGET_KERNEL_SOURCE := kernel/samsung/ibanezbass
-TARGET_KERNEL_CONFIG := exynos7885-gta3xlwifi_gsi_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/gta3xlwifi
+TARGET_KERNEL_CONFIG := exynos7885-gta3xlwifi_defconfig
 
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
-BOARD_KERNEL_SEPARATED_DT := true
+#BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 BOARD_CUSTOM_BOOTIMG := true

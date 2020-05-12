@@ -43,7 +43,7 @@ PRODUCT_COPY_FILES += \
 
 ifneq ($(INCLUDE_EXYNOS_BSP),)
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
-#$(call inherit-product, hardware/samsung_slsi/exynos7870/exynos7870.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos7885/exynos7885.mk)
 endif
 
 

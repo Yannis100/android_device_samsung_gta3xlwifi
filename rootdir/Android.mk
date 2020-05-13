@@ -16,42 +16,65 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := fstab.samsungexynos7885
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/fstab.samsungexynos7885
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := fstab.samsungexynos7885
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.rilcommon.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.rilcommon.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.samsung.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.samsung.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.samsungexynos7885.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.samsungexynos7885.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.samsungexynos7885.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.samsungexynos7885.usb.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.samsungexynos7885.usb.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.wifi.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.wifi.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := ueventd.samsungexynos7885.rc
-LOCAL_MODULE_STEM  := ueventd.rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/ueventd.samsungexynos7885.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR)
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := ueventd.samsungexynos7885.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
-#include $(CLEAR_VARS)
-#LOCAL_MODULE       := init.recovery.exynos7885.rc
-#LOCAL_MODULE_TAGS  := optional
-#LOCAL_MODULE_CLASS := ETC
-#LOCAL_SRC_FILES    := etc/init.recovery.exynos7885.rc
-#LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
-#include $(BUILD_PREBUILT)
-
-#include $(CLEAR_VARS)
-#LOCAL_MODULE       := init.recovery.usb.rc
-#LOCAL_MODULE_TAGS  := optional
-#LOCAL_MODULE_CLASS := ETC
-#LOCAL_SRC_FILES    := etc/init.recovery.usb.rc
-#LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
-#include $(BUILD_PREBUILT)
-
-
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.power.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := BOOT
+LOCAL_SRC_FILES    := init.power.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)

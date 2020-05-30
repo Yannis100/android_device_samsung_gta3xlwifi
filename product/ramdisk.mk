@@ -1,7 +1,11 @@
 # Ramdisk
 PRODUCT_PACKAGES += \
-    mx_log_collection.sh \
-    mx_logger.sh \
-    mx_logger_dump.sh \
-    fstab.exynos7885 \
-    ueventd.qcom.rc
+    fstab.samsungexynos7885 \
+    init.baseband.rc \
+    init.rilcommon.rc \
+    init.power.rc \
+    init.samsung.rc \
+    init.samsungexynos7885.rc \
+    init.samsungexynos7885.usb.rc \
+    init.wifi.rc \
+    ueventd.samsungexynos7885.rc

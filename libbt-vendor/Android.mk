@@ -46,10 +46,6 @@ LOCAL_C_INCLUDES += \
         external/bluetooth/bluedroid/hci/include \
         system/bt/hci/include \
         $(TARGET_OUT_HEADERS)/bt/hci_qcomm_init
-        #$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-
-LOCAL_ADDITIONAL_DEPENDENCIES += \
-$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 ifeq ($(BOARD_HAS_QCA_BT_AR3002), true)
 LOCAL_C_FLAGS := \
@@ -65,6 +61,7 @@ LOCAL_SHARED_LIBRARIES := \
         liblog
 
 LOCAL_MODULE := libbt-vendor
+LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_OWNER := qcom
 
@@ -86,8 +83,6 @@ endif
 ifeq ($(QCOM_BT_READ_ADDR_FROM_PROP),true)
 LOCAL_CFLAGS += -DREAD_BT_ADDR_FROM_PROP
 endif
-
-LOCAL_CFLAGS += -Wno-implicit-function-declaration
 
 #include $(LOCAL_PATH)/vnd_buildcfg.mk
 

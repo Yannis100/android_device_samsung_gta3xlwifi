@@ -18,6 +18,7 @@ $(call inherit-product-if-exists, vendor/samsung/gta3xlwifi/gta3xlwifi-vendor.mk
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+
 LOCAL_PATH := device/samsung/gta3xlwifi
 
 # Inherit board specific products
@@ -35,17 +36,24 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Boot animation
 TARGET_SCREEN_WIDTH := 1200
 TARGET_SCREEN_HEIGHT := 1920
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-    
+
 # cpboot-daemon
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd
+    $(LOCAL_PATH)/rootdir/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd
 
 ifneq ($(INCLUDE_EXYNOS_BSP),)
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi/exynos7885/exynos7885.mk)
 endif
 
-
+# Evolution X Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    org.evolution.build_donate_url=https://www.paypal.me/mrnubian \
+    org.evolution.build_maintainer=Evereth Duncan \
+    org.evolution.build_support_url= 
+    
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk

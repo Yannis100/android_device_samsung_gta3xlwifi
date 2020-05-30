@@ -16,10 +16,16 @@
 
 LOCAL_PATH := device/samsung/gta3xlwifi
 
-SELINUX_IGNORE_NEVERALLOWS := true
-
 # Include board config fragments
 include device/samsung/gta3xlwifi/board/*.mk
+
+BUILD_BROKEN_DUP_RULES := true
+SELINUX_IGNORE_NEVERALLOWS := true
+
+## Android 10 ######
+WITHOUT_CHECK_API := true
+TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
+
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2019-11-01
@@ -36,13 +42,13 @@ TARGET_USES_LEGACY_ADB_INTERFACE := true
 # Device Tree
 BOARD_USES_DT := true
 
-BOARD_ROOT_EXTRA_FOLDERS := efs
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware sec_storage efs
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
 # HWCServices
-BOARD_USES_HWC_SERVICES := false
+#BOARD_USES_HWC_SERVICES := false
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true

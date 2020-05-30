@@ -1,5 +1,11 @@
-# RAMDISK
+# Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7885 \
+    init.baseband.rc \
+    init.rilcommon.rc \
+    init.power.rc \
+    init.samsung.rc \
     init.samsungexynos7885.rc \
+    init.samsungexynos7885.usb.rc \
+    init.wifi.rc \
     ueventd.samsungexynos7885.rc

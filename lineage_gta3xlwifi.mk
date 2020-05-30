@@ -18,15 +18,21 @@
 $(call inherit-product, device/samsung/gta3xlwifi/device.mk)
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/aicp/config/common_full_tablet_wifionly.mk)
+# Inherit from the 64 bit configuration
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
+# Inherit some common  Evolution X stuff.
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BOOT_ANIMATION_RES_EVO := true
+TARGET_INCLUDE_WIFI_EXT := true
+$(call inherit-product, vendor/aosp/config/common_full_tablet_wifionly.mk)
+
 
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := aicp_gta3xlwifi
+PRODUCT_NAME := lineage_gta3xlwifi
 PRODUCT_DEVICE := gta3xlwifi
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T510
@@ -61,3 +67,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := samsung/gta3xlwifixx/gta3xlwifi:9/PPR1.180610.011/T510XXU2ASJD:user/release-keys
 
 TARGET_VENDOR := Samsung
+
+# Gapps
+TARGET_GAPPS_ARCH := arm

@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,18 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
+#
+# Input Device Calibration File for the touch screen.
+#
 
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := GraphicBuffer.cpp
+device.internal = 1
 
-LOCAL_C_INCLUDES := frameworks/native/include
+touch.deviceType = touchScreen
+touch.orientationAware = 1
 
-LOCAL_SHARED_LIBRARIES := libgui libui
+touch.size.calibration = area
+touch.size.scale = 52
+touch.size.bias = 11.8
+touch.size.isSummed = 0
 
-LOCAL_MODULE := libexynoscamera_shim
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_VENDOR_MODULE := true
+touch.pressure.calibration = amplitude
+touch.pressure.scale = 0.015
 
-include $(BUILD_SHARED_LIBRARY)
+touch.orientation.calibration = vector

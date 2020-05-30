@@ -12,13 +12,17 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
     
+    
 PRODUCT_PACKAGES += \
-    audio.primary.universal7885 \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    audio_amplifier.universal7885_32 \
+    audio.primary.universal7885_32 \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    libtinycompress \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
+    libtfa98xx_32 \
+    libtinycompress
+
     
 

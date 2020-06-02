@@ -14,11 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_gta3xlwifi.mk \
     $(LOCAL_DIR)/lineage_gta3xlwifi.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_gta3xlwifi-user \
-    aosp_gta3xlwifi-userdebug \
-    aosp_gta3xlwifi-eng   \
     lineage_gta3xlwifi-userdebug

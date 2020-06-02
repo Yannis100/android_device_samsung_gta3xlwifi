@@ -1,4 +1,4 @@
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    power.universal78885
+    power.universal78885 \
+		android.hardware.power@1.0-service.exynos

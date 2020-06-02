@@ -31,7 +31,7 @@ TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
 VENDOR_SECURITY_PATCH := 2019-11-01
 
 
-#TARGET_PREFER_32_BIT := true 
+#TARGET_PREFER_32_BIT := true
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -55,8 +55,10 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Inherit from the proprietary version
 -include vendor/samsung/gta3xlwifi/BoardConfigVendor.mk
-

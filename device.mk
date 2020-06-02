@@ -34,10 +34,18 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 1200
-TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_SCREEN_WIDTH := 1200
+TARGET_SCREEN_HEIGHT := 1920
+
+PRODUCT_HOST_PACKAGES += \
+    dtbhtoolExynos
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-impl
 
 
 # cpboot-daemon
@@ -53,7 +61,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     org.evolution.build_donate_url=https://www.paypal.me/mrnubian \
     org.evolution.build_maintainer=Evereth Duncan \
-    org.evolution.build_support_url= 
-    
+    org.evolution.build_support_url=
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk

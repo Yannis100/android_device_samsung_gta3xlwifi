@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aicp_gta3xlwifi.mk
+		$(LOCAL_DIR)/lineage_gta3xlwifi.mk
 
 COMMON_LUNCH_CHOICES := \
-    aicp_gta3xlwifi-userdebug
+		lineage_gta3xlwifi-userdebug

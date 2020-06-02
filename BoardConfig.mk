@@ -17,6 +17,7 @@
 LOCAL_PATH := device/samsung/gta3xlwifi
 
 SELINUX_IGNORE_NEVERALLOWS := true
+BUILD_BROKEN_DUP_RULES := true
 
 # Include board config fragments
 include device/samsung/gta3xlwifi/board/*.mk
@@ -24,8 +25,10 @@ include device/samsung/gta3xlwifi/board/*.mk
 # Security patch level
 VENDOR_SECURITY_PATCH := 2019-11-01
 
+# Exclude AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
 
-#TARGET_PREFER_32_BIT := true 
+#TARGET_PREFER_32_BIT := true
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -36,10 +39,10 @@ TARGET_USES_LEGACY_ADB_INTERFACE := true
 # Device Tree
 BOARD_USES_DT := true
 
-BOARD_ROOT_EXTRA_FOLDERS := efs
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware sec_storage efs
 
 # Vendor separation
-TARGET_COPY_OUT_VENDOR := system/vendor
+#TARGET_COPY_OUT_VENDOR := system/vendor
 
 # HWCServices
 #BOARD_USES_HWC_SERVICES := false
@@ -49,8 +52,10 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Inherit from the proprietary version
 -include vendor/samsung/gta3xlwifi/BoardConfigVendor.mk
-

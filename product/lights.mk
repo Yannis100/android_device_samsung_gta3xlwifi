@@ -1,4 +1,4 @@
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    lights.universal7885
+    lights.universal7885 \
+		android.hardware.light@2.0-service.samsung

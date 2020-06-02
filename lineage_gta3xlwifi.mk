@@ -26,7 +26,7 @@ $(call inherit-product, vendor/aicp/config/common_full_tablet_wifionly.mk)
 
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := aicp_gta3xlwifi
+PRODUCT_NAME := lineage_gta3xlwifi
 PRODUCT_DEVICE := gta3xlwifi
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T510
@@ -40,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.radio.noril=1 \
 	telephony.lteOnCdmaDevice=0
 
-	
+
 # ADB
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \

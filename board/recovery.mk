@@ -13,7 +13,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 #RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
 #TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.samsungexynos7885
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7885
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
@@ -40,4 +40,4 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_NEW_MINADBD := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
-endif 
+endif

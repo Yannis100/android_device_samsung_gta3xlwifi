@@ -5,6 +5,7 @@
 # Audio
 vendor/lib/libaudio-ril.so
 vendor/lib/libaudio_soundtrigger.so
+vendor/lib/libtinycompress.so
 vendor/lib/soundfx/libaudioeffectoffload.so
 vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib/soundfx/libaudiosaplus_sec.so
@@ -198,9 +199,9 @@ vendor/lib/libsensorndkbridge.so
 vendor/bin/hw/android.hardware.thermal@1.0-service
 vendor/etc/init/android.hardware.thermal@1.0-service.rc
 vendor/lib/hw/android.hardware.thermal@1.0-impl.so
-vendor/lib/hw/thermal.universal7885.so
 
 # Thermal-Hardware
+vendor/lib/hw/thermal.universal7885.so
 
 # Time
 

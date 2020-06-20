@@ -1,2 +1,0 @@
-# Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := efs 

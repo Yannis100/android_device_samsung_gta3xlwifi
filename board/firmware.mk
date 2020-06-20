@@ -1,3 +1,0 @@
-# Firmware
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true 

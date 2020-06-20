@@ -1,2 +1,0 @@
-# hal_nfc_default
-allow hal_nfc_default sysfs:file { read open getattr };

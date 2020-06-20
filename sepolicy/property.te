@@ -2,10 +2,6 @@
 type modemloader_prop, property_type;
 
 # CP-Boot Daemon
-type cpboot-daemon_prop, property_type;
+type cbd_prop, property_type;
 
-# Mobicore Daemon
-type tee_prop, property_type;
-
-# rild
-type rild_prop, property_type;
+type wc_transport_prop, property_type;

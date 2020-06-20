@@ -1,2 +1,3 @@
-# hal_cas_default
-allow hal_cas_default sysfs:file { read open getattr };
+allow hal_cas_default debugfs_tracing_debug:file { open write };
+allow hal_cas_default gpsd_exec:file getattr;
+

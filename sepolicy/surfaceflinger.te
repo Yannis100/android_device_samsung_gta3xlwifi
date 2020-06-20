@@ -1,2 +1,4 @@
-# SurfaceFlinger Sepolicy
-# allow surfaceflinger debugfs:file { write open };
+allow surfaceflinger debugfs_tracing_debug:file { open write };
+allow surfaceflinger sysfs:file { read open getattr };
+allow surfaceflinger gpsd_exec:file getattr;
+

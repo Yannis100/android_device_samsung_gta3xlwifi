@@ -1,1 +1,1 @@
-allow lmkd sysfs:file write;
+allow lmkd gpsd_exec:file getattr;

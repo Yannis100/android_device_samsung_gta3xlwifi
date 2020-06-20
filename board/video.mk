@@ -1,0 +1,20 @@
+# HWComposer
+BOARD_USES_VPP := true
+BOARD_HDMI_INCAPABLE := true
+
+# HWCServices - requires framework support
+BOARD_USES_HWC_SERVICES := true
+
+# LIBHWJPEG
+TARGET_USES_UNIVERSAL_LIBHWJPEG := true
+
+# FIMG2D
+BOARD_USES_SKIA_FIMGAPI := true
+BOARD_USES_FIMGAPI_V5X := true
+
+# SCALER
+BOARD_USES_DEFAULT_CSC_HW_SCALER := true
+BOARD_USES_SCALER_M2M1SHOT := true
+
+# Video scaling issue workaround
+TARGET_OMX_LEGACY_RESCALING := true

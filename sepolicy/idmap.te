@@ -1,1 +1,3 @@
-allow idmap sysfs:file { read open getattr };
+allow idmap debugfs_tracing_debug:file { open write };
+allow idmap gpsd_exec:file getattr;
+

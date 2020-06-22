@@ -36,6 +36,16 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-
+# ADB
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0 \
+    ro.secure=0
+    
+ifneq ($(INCLUDE_EXYNOS_BSP),)
+$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos7885/exynos7870.mk)
+endif
+    
 #Inherit from vendor
 $(call inherit-product-if-exists, vendor/samsung/gta3xlwifi/gta3xlwifi-vendor.mk)

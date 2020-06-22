@@ -37,16 +37,6 @@ PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
-	
-# ADB
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.logd.filter=disable\
-    ro.debuggable=1 \
-    persist.service.adb.enable=1
-
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="gta3xlwifi" \

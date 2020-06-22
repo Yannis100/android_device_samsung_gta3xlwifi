@@ -27,11 +27,15 @@ WITHOUT_CHECK_API := true
 TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-03-01
+#VENDOR_SECURITY_PATCH := 2020-03-01
+#PRODUCT_SHIPPING_API_LEVEL := 28
+
+# Treble
+#PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
-#DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 
 # Properties
 -include $(LOCAL_PATH)/system.prop

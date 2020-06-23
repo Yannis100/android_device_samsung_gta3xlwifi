@@ -41,6 +41,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=adb \
     ro.adb.secure=0 \
     ro.secure=0
+
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.carrier=wifi-only
     
 ifneq ($(INCLUDE_EXYNOS_BSP),)
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)

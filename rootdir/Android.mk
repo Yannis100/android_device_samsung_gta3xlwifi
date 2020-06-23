@@ -25,35 +25,35 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := init.samsung.rc
 LOCAL_MODULE_CLASS := BOOT
 LOCAL_SRC_FILES    := init.samsung.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.exynos7885.rc
 LOCAL_MODULE_CLASS := BOOT
 LOCAL_SRC_FILES    := init.exynos7885.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.exynos7885.usb.rc
 LOCAL_MODULE_CLASS := BOOT
 LOCAL_SRC_FILES    := init.exynos7885.usb.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.wifi.rc
 LOCAL_MODULE_CLASS := BOOT
 LOCAL_SRC_FILES    := init.wifi.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.power.rc
 LOCAL_MODULE_CLASS := BOOT
 LOCAL_SRC_FILES    := init.power.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

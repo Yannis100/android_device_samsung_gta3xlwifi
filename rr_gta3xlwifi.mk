@@ -19,7 +19,7 @@
 $(call inherit-product, device/samsung/gta3xlwifi/device.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/rr/config/common_full_tablet_wifionly.mk)
 
 
 TARGET_BOOT_ANIMATION_RES := 1080
@@ -27,7 +27,7 @@ TARGET_BOOT_ANIMATION_RES_EVO := true
 TARGET_INCLUDE_WIFI_EXT := true
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_gta3xlwifi
+PRODUCT_NAME := rr_gta3xlwifi
 PRODUCT_DEVICE := gta3xlwifi
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T510

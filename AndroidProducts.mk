@@ -14,9 +14,11 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/rr_gta3xlwifi.mk \
     $(LOCAL_DIR)/lineage_gta3xlwifi.mk
 
 COMMON_LUNCH_CHOICES :=  \
-    lineage_gta3xlwifi-user \
+    rr_gta3xlwifi-userdebug \
+    rr_gta3xlwifi-eng \
     lineage_gta3xlwifi-userdebug \
     lineage_gta3xlwifi-eng

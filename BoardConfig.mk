@@ -49,7 +49,10 @@ BOARD_USES_DT := true
 BOARD_ROOT_EXTRA_FOLDERS := efs
 
 # Vendor separation
-TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_VENDOR := system/vendor
+
+# Wifi loader
+BOARD_HAVE_SAMSUNG_WIFI := true
 
 # SELinux
 #BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
